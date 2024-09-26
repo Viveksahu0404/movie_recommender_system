@@ -3,6 +3,20 @@ import pickle
 import pandas as pd
 import requests
 
+bg_img = '''
+<style>
+.stApp {
+    background-image: url("https://singh-cp.github.io/netflix-landingpage/images/netflix-background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+</style>
+'''
+
+# Inject CSS into Streamlit
+st.markdown(bg_img, unsafe_allow_html=True)
+
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=8265bd1679663a7ea12ac168da84d2e8&language=en-US".format(
         movie_id)
